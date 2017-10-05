@@ -251,6 +251,7 @@ public class Display_Purchase extends javax.swing.JFrame {
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+                listnerUpdate(evt);
             }
         });
 
@@ -259,6 +260,7 @@ public class Display_Purchase extends javax.swing.JFrame {
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
+                listnerUpdate(evt);
             }
         });
 
@@ -513,6 +515,7 @@ public class Display_Purchase extends javax.swing.JFrame {
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
+                listnerUpdate(evt);
             }
         });
 
@@ -687,6 +690,7 @@ public class Display_Purchase extends javax.swing.JFrame {
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
+                listnerUpdate(evt);
             }
         });
 
@@ -746,16 +750,6 @@ public class Display_Purchase extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Update", jPanel5);
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Vani", 1, 24)); // NOI18N
-        jButton2.setText("Achei");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -765,8 +759,7 @@ public class Display_Purchase extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -777,8 +770,7 @@ public class Display_Purchase extends javax.swing.JFrame {
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -797,12 +789,11 @@ public class Display_Purchase extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    // Display Button
+    private void listnerUpdate(java.awt.event.ActionEvent evt) {
         
         try {
-                for (int r = 0; r < 100; r++) { //initializing row
-                    for (int c = 0; c < 4; c++) { //initializing column
+                for (int r = 0; r < 100; r++) {
+                    for (int c = 0; c < 4; c++) {
                         jTable1.setValueAt(null, r, c);
                     }
                 }
@@ -812,7 +803,7 @@ public class Display_Purchase extends javax.swing.JFrame {
                 String[] item = new String[100];
                 String[] temp;
 
-                int x = 0;  //read item
+                int x = 0;
                 while ((item[x] = rdfile.readLine()) != null) {
                     temp = item[x].split("\t");
                     jTable1.setValueAt((1000 + x + 1), x, 0);
@@ -827,7 +818,7 @@ public class Display_Purchase extends javax.swing.JFrame {
             } catch (IOException e) {
             }
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         //Purchase Button
@@ -1233,6 +1224,8 @@ public class Display_Purchase extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Display_Purchase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
+//        listnerUpdate(evt);
 
         /*
          * Create and display the form
